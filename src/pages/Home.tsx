@@ -8,7 +8,7 @@ import FiltersSidebar from '@/components/dashboard/FiltersSidebar';
 import SortControls from '@/components/dashboard/SortControls';
 import { UploadCloud, Users } from 'lucide-react';
 
-const Index = () => {
+const Home = () => {
   const { 
     candidates,
     filteredCandidates, 
@@ -68,4 +68,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Home;
