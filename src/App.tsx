@@ -1,19 +1,41 @@
 
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "@/hooks/use-theme";
+import { CandidateProvider } from "@/context/CandidateContext";
 
-import './App.css'
+import Layout from "@/components/layout/Layout";
+import Index from "./pages/Index";
+import Upload from "./pages/Upload";
+import Team from "./pages/Team";
+import NotFound from "./pages/NotFound";
 
-function App() {
+const queryClient = new QueryClient();
 
-  return (
-    <>
-      
-      <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100"> 
-        <h1 className="text-3xl font-bold text-red-100">
-          Welcome to Talent Mercor
-        </h1>
-     </div>
-    </>
-  )
-}
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <ThemeProvider defaultTheme="light">
+      <CandidateProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<Index />} />
+                <Route path="upload" element={<Upload />} />
+                <Route path="team" element={<Team />} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </CandidateProvider>
+    </ThemeProvider>
+  </QueryClientProvider>
+);
 
-export default App
+export default App;
