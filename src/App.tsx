@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/hooks/use-theme";
 import { CandidateProvider } from "@/context/CandidateContext";
 
 import Layout from "@/components/layout/Layout";
-import Home from "./pages/Home";
+import Index from "./pages/index";
 import Upload from "./pages/Upload";
 import Team from "./pages/Team";
 import NotFound from "./pages/NotFound";
@@ -25,7 +25,7 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Layout />}>
-                <Route index element={<Home/>} />
+                <Route index element={<Index />} />
                 <Route path="upload" element={<Upload />} />
                 <Route path="team" element={<Team />} />
                 <Route path="*" element={<NotFound />} />
