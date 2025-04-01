@@ -52,7 +52,7 @@ export default function FileUpload() {
     for (let i = 0; i < data.length; i++) {
       const candidate = data[i];
       
-      // Check required fields
+      
       if (!candidate.name || typeof candidate.name !== 'string') {
         setDetailedError(`Candidate at index ${i} is missing a valid name.`);
         return false;
@@ -63,13 +63,13 @@ export default function FileUpload() {
         return false;
       }
       
-      // Validate work_experiences array exists
+      
       if (!candidate.work_experiences || !Array.isArray(candidate.work_experiences)) {
         setDetailedError(`Candidate "${candidate.name}" is missing work_experiences array.`);
         return false;
       }
       
-      // Validate education object structure
+      
       if (!candidate.education || typeof candidate.education !== 'object') {
         setDetailedError(`Candidate "${candidate.name}" is missing education data.`);
         return false;
@@ -85,7 +85,7 @@ export default function FileUpload() {
         return false;
       }
       
-      // Validate skills array exists
+      
       if (!candidate.skills || !Array.isArray(candidate.skills)) {
         setDetailedError(`Candidate "${candidate.name}" is missing skills array.`);
         return false;
@@ -118,7 +118,7 @@ export default function FileUpload() {
         if (event.target) {
           const data = JSON.parse(event.target.result as string);
           
-          // Validate the data structure
+         
           if (!validateCandidateData(data)) {
             throw new Error('Invalid data structure: ' + detailedError);
           }
