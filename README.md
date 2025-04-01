@@ -1,54 +1,52 @@
-# React + TypeScript + Vite
+# Hiring Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a full-stack hiring application built to help organizations process and evaluate job applications from a large pool of candidates. The application provides an intuitive interface to manage candidate data, filter and sort applicants, and make informed hiring decisions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Frontend Dashboard
+- A clean and user-friendly interface to view all candidates.
+- Supports both **Dark Mode** and **Light Mode** for improved user experience.
 
-## Expanding the ESLint configuration
+### Candidate Profiles
+- Detailed profiles for each candidate, including:
+  - Name, email, phone, and location.
+  - Work experience, education, skills, salary expectations, and availability.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Filtering & Sorting
+- Filter and sort candidates by:
+  - Experience, skills, education level, salary expectations, and location.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### AI-powered Recommendations
+- Automatically rank and suggest the top 5 candidates based on:
+  - Skills, experience, and salary fit.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Final Selection Page
+- A dedicated section to display the chosen 5 candidates.
+- Includes reasoning for their selection.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Installation
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/royaals/talentmercor.git
+   cd talentmercor
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Usage
+1. Add candidate data through the dashboard.
+2. Use filtering and sorting options to narrow down candidates.
+3. View AI-powered recommendations for the top 5 candidates.
+4. Finalize your selection and view the reasoning on the Final Selection Page.
+
+
